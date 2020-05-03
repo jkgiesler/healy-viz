@@ -24,9 +24,11 @@ p + geom_line(color='gray70', aes(group = country)) +
 ```
 
 ```{r}
+# 4.5
+
 # install.packages('socviz')
 require(socviz)
-feather::write_feather(gss_sm,'gss_sm.f')
+feather::write_feather(gss_sm,'data/gss_sm.f')
 
 p <- ggplot(data = gss_sm,
             mapping = aes(x = age, y = childs))
@@ -35,3 +37,6 @@ p + geom_point(alpha = 0.2) +
     geom_smooth(method='loess') +
     facet_grid(sex~race) + theme_minimal()
 ```
+
+
+```{r}
